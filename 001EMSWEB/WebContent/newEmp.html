@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script type="text/javascript">
+	function validate() {
+		var eid = document.myForm.eno.value;
+		var ename = document.myForm.ename.value;
+		var esal = document.myForm.esal.value;
+
+		var flag = true;
+
+		if (eid.length < 1) {
+			//alert("Eid is empty !")
+			document.getElementById("eidErr").innerHTML = "Eid is empty !";
+			flag = false;
+		}
+
+		if (ename.length < 1) {
+			//alert("Ename is empty !")
+			document.getElementById("enameErr").innerHTML = "Ename is empty !";
+			flag = false;
+		}
+
+		if (esal.length < 1) {
+			//alert("Esal is empty !")
+			document.getElementById("esalErr").innerHTML = "Esal is empty !";
+			flag = false;
+		}
+
+		return flag;
+
+	}
+</script>
+<style type="text/css">
+.error{
+   color: red;
+}
+
+</style>
+</head>
+<body>
+	<h1>New Employee</h1>
+	<form action="#" method="post" onsubmit="return validate();"
+		name="myForm">
+		<table>
+			<tr>
+				<td>Eno</td>
+				<td><input type="text" name="eno"></td>
+				<td><span class="error" id="eidErr"></span></td>
+			</tr>
+			<tr>
+				<td>Ename</td>
+				<td><input type="text" name="ename"></td>
+				<td><span class="error" id="enameErr"></span></td>
+			</tr>
+			<tr>
+				<td>Esal</td>
+				<td><input type="text" name="esal"></td>
+				<td><span class="error" id="esalErr"></span></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="Save"></td>
+				<td><input type="reset"></td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>
